@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../compo/head.ejs") -%>
+<body class="">
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ Pre-loader ] End -->
+	<!-- [ navigation menu ] start -->
+	<%- include("../compo/sidebar") -%>
+	<!-- [ navigation menu ] end -->
+
+	<!-- [ Header ] start -->
+	<%- include("../compo/header") -%>
+	<!-- [ Header ] end -->
+	<!-- [ Main Content ] start -->
+	<div class="pcoded-main-container">
+		<div class="pcoded-wrapper">
+			<div class="pcoded-content">
+				<div class="pcoded-inner-content">
+					<div class="main-body">
+						<div class="page-wrapper">
+							<!-- [ breadcrumb ] start -->
+							<div class="page-header">
+								<div class="page-block">
+									<div class="row align-items-center">
+										<div class="col-md-12">
+											<div class="page-header-title">
+												<h5 class="m-b-10">Button</h5>
+											</div>
+											<ul class="breadcrumb">
+												<li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+												<li class="breadcrumb-item"><a href="#!">Basic Components</a></li>
+												<li class="breadcrumb-item"><a href="#!">Button</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- [ breadcrumb ] end -->
+							<!-- [ Main Content ] start -->
+							<!-- [ button ] start -->
+							<div class="row">
+								<!-- [ default-button ] start -->
+								<div class="col-sm-12">
+									<div class="card">
+										<div class="card-header">
+											<h5>Default</h5>
+										</div>
+										<div class="card-body">
+											<button type="button" class="btn btn-primary" title="btn btn-primary" data-toggle="tooltip">Primary</button>
+											<button type="button" class="btn btn-secondary" title="btn btn-secondary" data-toggle="tooltip">Secondary</button>
+											<button type="button" class="btn btn-success" title="btn btn-success" data-toggle="tooltip">Success</button>
+											<button type="button" class="btn btn-danger" title="btn btn-danger" data-toggle="tooltip">Danger</button>
+											<button type="button" class="btn btn-warning" title="btn btn-warning" data-toggle="tooltip">Warning</button>
+											<button type="button" class="btn btn-info" title="btn btn-info" data-toggle="tooltip">Info</button>
+											<button type="button" class="btn btn-light" title="btn btn-light" data-toggle="tooltip">Light</button>
+											<button type="button" class="btn btn-dark" title="btn btn-dark" data-toggle="tooltip">Dark</button>
+											<button type="button" class="btn btn-link" title="btn btn-link" data-toggle="tooltip">Link</button>
+										</div>
+									</div>
+								</div>
+								<!-- [ default-button ] end -->
+
+								<!-- [ outline-button ] start -->
+								<div class="col-sm-12">
+									<div class="card">
+										<div class="card-header">
+											<h5>Outline</h5>
+										</div>
+										<div class="card-body">
+											<button type="button" class="btn btn-outline-primary" title="btn btn-outline-primary" data-toggle="tooltip">Primary</button>
+											<button type="button" class="btn btn-outline-secondary" title="btn btn-outline-secondary" data-toggle="tooltip">Secondary</button>
+											<button type="button" class="btn btn-outline-success" title="btn btn-outline-success" data-toggle="tooltip">Success</button>
+											<button type="button" class="btn btn-outline-danger" title="btn btn-outline-danger" data-toggle="tooltip">Danger</button>
+											<button type="button" class="btn btn-outline-warning" title="btn btn-outline-warning" data-toggle="tooltip">Warning</button>
+											<button type="button" class="btn btn-outline-info" title="btn btn-outline-info" data-toggle="tooltip">Info</button>
+											<button type="button" class="btn btn-outline-light" title="btn btn-outline-light" data-toggle="tooltip">Light</button>
+											<button type="button" class="btn btn-outline-dark" title="btn btn-outline-dark" data-toggle="tooltip">Dark</button>
+										</div>
+									</div>
+								</div>
+								<!-- [ outline-button ] end -->
+								<!-- [ size-button ] start -->
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-header">
+											<h5>Sizes [ Large ]</h5>
+										</div>
+										<div class="card-body">
+											<p>use <code>.btn-lg</code> in class <code>.btn</code> class to get Large button</p>
+											<button type="button" class="btn btn-primary btn-lg">Large button</button>
+											<button type="button" class="btn btn-secondary btn-lg">Large button</button>
+										</div>
+									</div>
+								</div>
+								<!-- [ size-button ] end -->
+								<!-- [ size-small-button ] start -->
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-header">
+											<h5>Sizes [ Small ]</h5>
+										</div>
+										<div class="card-body">
+											<p>use <code>.btn-sm</code> in class <code>.btn</code> class to get Small button</p>
+											<button type="button" class="btn btn-primary btn-sm">Small button</button>
+											<button type="button" class="btn btn-secondary btn-sm">Small button</button>
+										</div>
+									</div>
+								</div>
+								<!-- [ size-small-button ] end -->
+								<!-- [ checkbox-button ] start -->
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-header">
+											<h5>Checkbox Button</h5>
+										</div>
+										<div class="card-body">
+											<div class="btn-group-toggle" data-toggle="buttons">
+												<label class="btn btn-secondary active">
+													<input type="checkbox" checked> Checked</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- [ checkbox-button ] end -->
+								<!-- [ radio-button ] start -->
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-header">
+											<h5>Radio Buttons</h5>
+										</div>
+										<div class="card-body">
+											<div class="btn-group btn-group-toggle" data-toggle="buttons">
+												<label class="btn btn-secondary active">
+													<input type="radio" name="options" id="option1" checked> Active</label>
+												<label class="btn btn-secondary">
+													<input type="radio" name="options" id="option2"> Radio</label>
+												<label class="btn btn-secondary">
+													<input type="radio" name="options" id="option3"> Radio</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- [ radio-button ] end -->
+							</div>
+							<div class="row">
+								<!-- [ button-icon ] start -->
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-header">
+											<h5>Button With Icon</h5>
+										</div>
+										<div class="card-body">
+											<button type="button" class="btn btn-primary"><i class="feather icon-thumbs-up"></i>Primary</button>
+											<button type="button" class="btn btn-secondary"><i class="feather icon-camera"></i>Secondary</button>
+											<button type="button" class="btn btn-success"><i class="feather icon-check-circle"></i>Success</button>
+											<button type="button" class="btn btn-danger"><i class="feather icon-slash"></i>Danger</button>
+											<button type="button" class="btn btn-warning"><i class="feather icon-alert-triangle"></i>Warning</button>
+											<button type="button" class="btn btn-info"><i class="feather icon-info"></i>Info</button>
+										</div>
+									</div>
+								</div>
+								<!-- [ button-icon ] end -->
+								<!-- [ button-outline ] start -->
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-header">
+											<h5>Outline Icon Buttons</h5>
+										</div>
+										<div class="card-body">
+											<button type="button" class="btn btn-outline-primary"><i class="feather icon-thumbs-up"></i>Primary</button>
+											<button type="button" class="btn btn-outline-secondary"><i class="feather icon-camera"></i>Secondary</button>
+											<button type="button" class="btn btn-outline-success"><i class="feather icon-check-circle"></i>Success</button>
+											<button type="button" class="btn btn-outline-danger"><i class="feather icon-slash"></i>Danger</button>
+											<button type="button" class="btn btn-outline-warning"><i class="feather icon-alert-triangle"></i>Warning</button>
+											<button type="button" class="btn btn-outline-info"><i class="feather icon-info"></i>Info</button>
+										</div>
+									</div>
+								</div>
+								<!-- [ button-outline ] end -->
+							</div>
+							<div class="row">
+								<!-- [ basic-dropdown-button ] start -->
+								<div class="col-md-12">
+									<div class="card">
+										<div class="card-header">
+											<h5>Basic Dropdown Button</h5>
+										</div>
+										<div class="card-body">
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Secondary</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Success</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danger</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warning</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- [ basic-dropdown-button ] end -->
+								<!-- [ split-danger-button ] start -->
+								<div class="col-md-12">
+									<div class="card">
+										<div class="card-header">
+											<h5>Split Dropdown Button</h5>
+										</div>
+										<div class="card-body">
+											<!-- Example split danger button -->
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-primary">Primary</button>
+												<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-secondary">Secondary</button>
+												<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-success">Success</button>
+												<button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-danger">Danger</button>
+												<button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-warning">Warning</button>
+												<button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-info">Info</button>
+												<button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- [ split-danger-button ] end -->
+								<!-- [ outline-dropdown-button ] start -->
+								<div class="col-md-12">
+									<div class="card">
+										<div class="card-header">
+											<h5>Basic Outline Dropdown Button</h5>
+										</div>
+										<div class="card-body">
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Secondary</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Success</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-outline-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danger</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-outline-warning dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warning</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button class="btn btn-outline-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- [ outline-dropdown-button ] end -->
+								<!-- [ split-dropdown-button ] start -->
+								<div class="col-md-12">
+									<div class="card">
+										<div class="card-header">
+											<h5>Split Outline Dropdown Button</h5>
+										</div>
+										<div class="card-body">
+											<!-- Example split danger button -->
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-outline-primary">Primary</button>
+												<button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-outline-secondary">Secondary</button>
+												<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-outline-success">Success</button>
+												<button type="button" class="btn btn-outline-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-outline-danger">Danger</button>
+												<button type="button" class="btn btn-outline-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-outline-warning">Warning</button>
+												<button type="button" class="btn btn-outline-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+											<div class="btn-group mb-2 mr-2">
+												<button type="button" class="btn btn-outline-info">Info</button>
+												<button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle
+														Dropdown</span></button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Action</a>
+													<a class="dropdown-item" href="#!">Another action</a>
+													<a class="dropdown-item" href="#!">Something else here</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#!">Separated link</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- [ split-dropdown-button ] end -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%- include("../compo/footer") -%>
+</body>
+
+</html>
