@@ -115,6 +115,7 @@
                         <div class="pro-head d-flex align-items-center justify-content-start">
                             <div class="profile-picture-container" style="position: relative; display: inline-block;">
                                 <img src="<%= user && user.path ? user.path : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>" class="profile-picture" alt="Profile Picture" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+								<span class="<%= user.status == 'Active' ? 'bg-success' : 'bg-danger' %> p-1  rounded-pill position-absolute z-5 border border-2" style="bottom: 0.5rem; right: 1.1rem;"></span>
                             </div>
                             <span><%= user && user.username ? user.username : "Nilesh" %></span>
                             <a href="/SignOut" class="dud-logout" title="Logout">
