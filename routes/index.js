@@ -1,9 +1,10 @@
 const express = require("express");
 const routes = express.Router();
 const indexController = require("../controllers/indexController.js")
+const BlogControler = require("../controllers/BlogController.js")
 const AuthMiddleware = require("../middleware/indexmiddleware.js");
 const upload = require("../middleware/ProfileImgUpload.js");
-const user = require("../middleware/userGetmiddleware.js")
+const user = require("../middleware/userGetmiddleware.js");
 
 
 routes.get("/", AuthMiddleware, user, indexController.HomeController);
@@ -19,7 +20,9 @@ routes.get("/mapgoogle", AuthMiddleware, user, indexController.mapgoogle);
 routes.get("/formeelement", AuthMiddleware, user, indexController.formelement);
 routes.get("/chart", AuthMiddleware, user, indexController.chart);
 routes.get("/tbl", AuthMiddleware, user, indexController.tbl);
-routes.get("/profile", AuthMiddleware, user, indexController.profile)
+routes.get("/profile", AuthMiddleware, user, indexController.profile);
+routes.get("/addBlog", AuthMiddleware, user, BlogControler.addBlog);
+routes.get("/ViewBlog", AuthMiddleware, user, BlogControler.ViewBlog)
 
 // Auth Route
 routes.get("/authsignin", indexController.authsignin);
@@ -28,6 +31,7 @@ routes.get("/SignOut", indexController.SignOut);
 routes.post("/register", indexController.register);
 routes.post("/login", indexController.authLogin);
 routes.post("/profileEdit/:id", indexController.profileEdit)
-routes.post("/profileImg/:id", upload.single("profileImg"), indexController.profileImg)
+routes.post("/profileImg/:id", upload.single("profileImg"), indexController.profileImg);
+routes.post("/addBlog",BlogControler.postBlog)
 
 module.exports= routes

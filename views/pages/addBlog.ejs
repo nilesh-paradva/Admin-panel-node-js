@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../compo/head") -%>
+<body>
+
+    <!-- [ navigation menu ] start -->
+	<%- include("../compo/sidebar") -%>
+	<!-- [ navigation menu ] end -->
+
+	<!-- [ Header ] start -->
+	<%- include("../compo/header") -%>
+	<!-- [ Header ] end -->
+
+    <div class="pcoded-main-container">
+		<div class="pcoded-wrapper">
+			<div class="pcoded-content">
+				<div class="pcoded-inner-content">
+					<div class="main-body">
+						<div class="page-wrapper">
+							<div class="page-header">
+								<div class="page-block">
+									<div class="row align-items-center justify-content-center">
+										<div class="col-md-8">
+                                            <form action="/addBlog" method="post">
+                                                <div class="form-group mb-3">
+                                                    <label for="title" class="text-black">Title :-</label>
+                                                    <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <label for="blogImg" class="text-black">Blog Image :-</label>
+                                                    <input type="file" class="form-control" id="blogImg" name="blogImg" placeholder="blogImg">
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <label for="Blogdescription" class="text-black">Blog Description :-</label>
+                                                    <textarea id="Blogdescription" class="form-control" name="Blogdescription" placeholder="Enter your text here...✍"></textarea>
+                                                </div>
+                                                <div class="form-group mb-3 text-center">
+                                                    <input type="submit" class="btn btn-primary">
+                                                </div>
+                                            </form>
+                                        </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/6/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: "#Blogdescription",
+            plugins: "advlist autolink lists link image charmap preview anchor pagebreak searchreplace wordcount visualblocks code fullscreen insertdatetime media table emoticons",
+            toolbar: "undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | outdent indent | bullist numlist | link image media | table emoticons | code preview fullscreen",
+            menubar: "file edit view insert format tools table help",
+            height: 300
+        });
+    </script>
+    <%- include("../compo/footer") -%>
+</body>
+</html>
