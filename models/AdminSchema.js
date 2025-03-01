@@ -15,9 +15,12 @@ const AdminSchema = new mongoose.Schema({
     state: {type: String, default: null},
     country: {type: String, default: null},
     avatar :{type: String, default: null},
+    status :{type: String, default: "Active"},
     bio : {type : String, default :null},
     timezone:{type : String, default : null},
-    status:{type: String, default : "Active"},
+    linkedin:{type: String, default : null},
+    facebook:{type: String, default : null},
+    instagram:{type: String, default : null},
     membership_level:{type : String, default : null}
 
 },{timestamps:true});
