@@ -102,9 +102,9 @@
 												<div class="page-header-title">
 													<h5 class="m-b-10">Profile Page</h5>
 													<ul class="breadcrumb">
-														<li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
-														<li class="breadcrumb-item"><a href="#">User</a></li>
-														<li class="breadcrumb-item"><a href="#">Profile</a></li>
+														<li class="breadcrumb-item"><a href="/" class="text-decoration-none"><i class="feather icon-home"></i></a></li>
+														<li class="breadcrumb-item"><a href="#" class="text-decoration-none">User</a></li>
+														<li class="breadcrumb-item"><a href="#" class="text-decoration-none">Profile</a></li>
 													</ul>
 												</div>
 												<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Profile</button>
@@ -113,7 +113,7 @@
 									</div>
 								</div>
 								<div class="row gap-3 align-items-center justify-content-center">
-									<div class="col-8 d-flex align-items-center justify-content-between border border-4 py-4 rounded-2  border-primary">
+									<div class="col-lg-10 d-flex align-items-center justify-content-between border border-2 py-4 rounded-2  border-primary">
 										<form action="/profileImg/<%= user._id %>" method="post" enctype="multipart/form-data" class="d-flex align-items-center justify-content-between w-100">
 											<div class="img-dis d-flex align-items-center">
 												<div class="profile-picture-container" style="position: relative; display: inline-block;">
@@ -135,7 +135,7 @@
 											</div>
 										</form>
 									</div>
-									<div class="col-8 d-flex flex-column  justify-content-start border border-4 py-4 rounded-2  border-primary">
+									<div class="col-lg-10 d-flex flex-column  justify-content-start border border-2 py-4 rounded-2  border-primary">
 										<h3>Contact Information</h3>
 										<div class="dis">
 											<ul>
@@ -149,7 +149,7 @@
 											</ul>
 										</div>
 									</div>
-									<div class="col-8 d-flex flex-column  justify-content-start border border-4 py-4 rounded-2  border-primary">
+									<div class="col-lg-10 d-flex flex-column  justify-content-start border border-2 py-4 rounded-2  border-primary">
 										<h3>Location</h3>
 										<div class="dis">
 											<ul>
@@ -164,6 +164,54 @@
 											</ul>
 										</div>
 									</div>
+									<% if(blogUser.length !== 0) { %>
+										<div class="col-lg-10 d-flex flex-wrap border border-2 py-4 rounded-2  border-primary ">
+											<% const sortBlogs = blogUser.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) %>
+											<div class="row row-gap-3 ">
+												<% sortBlogs.map((blog) => { %>
+													<div class="card-box col-md-6" style="height: 100%;">
+														<div class="card-box-body shadow border border-2 border-secondary-subtle rounded-2 px-3 py-3" style="height: 100%;">
+															<div class="mb-3 blog-profile-img-dis d-flex align-items-center justify-content-between">
+																<div class="profile-picture-container d-flex align-items-center justify-content-center" style="position: relative; display: inline-block;">
+																	<img src="<%= user && user.path ? user.path : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>"  class="profile-picture"  alt="Profile Picture"  style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+																	<div class="dis">
+																		<h4 class="card-title text-primary ps-2 m-0 text-black"><%= user.username %></h4>
+																				<p class="m-0 ps-2"><%= new Date(blog.createdAt).toLocaleString('en-US',{
+																					weekday: 'long', 
+																					year: 'numeric', 
+																					month: 'long', 
+																					day: 'numeric', 
+																					hour: 'numeric', 
+																					minute: 'numeric', 
+																					second: 'numeric', 
+																					hour12: true, 
+																					<!-- timeZone: 'UTC' -->
+																				}) %></p>
+																	</div>
+																</div>
+																<span class="card-title text-primary ps-2 time-ago" data-time="<%= blog.createdAt %>"><%= new Date(blog.createdAt).toLocaleString('en-US') %></span>
+															</div>
+															<div class="blog-img-title-des">
+																<div class="title mb-2">
+																	<p class="m-0 p-0 fs-5"><%= blog.title %></p>
+																</div>
+																<div class="mb-2 blog-img d-flex align-items-center justify-content-center">
+																	<div class="border border-2 rounded-2 p-1">
+																		<img src="<%= blog.blogImag && blog.blogImag ? blog.blogImag : 'https://www.gynprog.com.br/wp-content/uploads/2017/06/wood-blog-placeholder.jpg' %>"  class="profile-picture img-fluid"  alt="Profile Picture"  style="object-fit: cover;">
+																	</div>
+																</div>
+																<div class="description ">
+																	<%- blog.Blogdescription %>
+																</div>
+															</div>
+														</div>
+													</div>
+												<%})%>
+											</div>
+										</div>
+									<%}else{%>
+										<h4 class="text-center">No Blog Available</h4>
+									<%}%>
 								</div>
 							</div>
 						</div>
@@ -182,6 +230,24 @@
             	reader.readAsDataURL(file);
         	}
     	});
+        function timeAgo(date) {
+            const now = new Date();
+            const seconds = Math.floor((now - new Date(date)) / 1000);
+            if (seconds < 60) return `${seconds} sec ago`;
+            const minutes = Math.floor(seconds / 60);
+            if (minutes < 60) return `${minutes} min ago`;
+            const hours = Math.floor(minutes / 60);
+            if (hours < 24) return `${hours} hours ago`;
+            const days = Math.floor(hours / 24);
+            return `${days} days ago`;
+        }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".time-ago").forEach(function (element) {
+                const time = element.getAttribute("data-time");
+                element.innerText = timeAgo(time);
+            });
+        });
 		</script>
 		<%- include("../compo/footer") -%>
 	</body> 

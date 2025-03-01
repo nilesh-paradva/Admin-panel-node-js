@@ -17,38 +17,43 @@
                 <div class="pcoded-inner-content">
                     <div class="container mt-4">
                         <h1 class="text-center mb-4">View Blog</h1>
-                        <div class="row">
-                            <% const sortedBlogs = AdminBlog.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) %>
+                            <% const sortBlogs = AdminBlog.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) %>
 
-                            <% sortedBlogs.forEach(blog => { %>
-                                <div class="col-md-6 mb-4">
-                                    <div class="card shadow-sm border-2 border-primary">
-                                        <div class="card-body">
-                                            <div class="blog-profile-img-dis d-flex align-items-center justify-content-between">
-                                                <div class="profile-picture-container d-flex align-items-center justify-content-center" style="position: relative; display: inline-block;">
-                                                    <img src="<%= blog.admin && blog.admin.path ? blog.admin.path : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>"  class="profile-picture"  alt="Profile Picture"  style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-													<div class="dis">
-														<h4 class="card-title text-primary ps-2 m-0 text-black"><%= blog.admin.username %></h4>
-																<p class="m-0 ps-2"><%= new Date(blog.createdAt).toLocaleString('en-US',{
-																	weekday: 'long', 
-																	year: 'numeric', 
-																	month: 'long', 
-																	day: 'numeric', 
-																	hour: 'numeric', 
-																	minute: 'numeric', 
-																	second: 'numeric', 
-																	hour12: true, 
-																	<!-- timeZone: 'UTC' -->
-																}) %></p>
-													</div>
+                            <div class="row g-4">
+                                <% sortBlogs.forEach(blog => { %>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="card-box shadow border border-2 border-secondary rounded-2 h-100 d-flex flex-column">
+                                            <div class="card-box-body px-3 py-3 flex-grow-1 d-flex flex-column">
+                                                <div class="mb-3 blog-profile-img-dis d-flex align-items-center justify-content-between">
+                                                    <div class="profile-picture-container d-flex align-items-center">
+                                                        <img src="<%= blog.admin && blog.admin.path ? blog.admin.path : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>" class="profile-picture" alt="Profile Picture" style="width: 70px; aspect-ratio: 1/1; border-radius: 50%; object-fit: cover;">
+                                                        <div class="ps-2">
+                                                            <h4 class="card-title text-primary m-0 text-black"><%= blog.admin.username %></h4>
+                                                            <p class="m-0"><%= new Date(blog.createdAt).toLocaleString('en-US', {
+                                                                weekday: 'long', year: 'numeric', month: 'long', 
+                                                                day: 'numeric', hour: 'numeric', minute: 'numeric', 
+                                                                second: 'numeric', hour12: true
+                                                            }) %></p>
+                                                        </div>
+                                                    </div>
+                                                    <span class="card-title text-primary ps-2 time-ago" data-time="<%= blog.createdAt %>">
+                                                        <%= new Date(blog.createdAt).toLocaleString('en-US') %>
+                                                    </span>
                                                 </div>
-												<span class="card-title text-primary ps-2 time-ago" data-time="<%= blog.createdAt %>"><%= new Date(blog.createdAt).toLocaleString('en-US') %></span>
+                                                <div class="blog-img-title-des flex-grow-1 d-flex flex-column">
+                                                    <div class="title mb-2"><p class="m-0 p-0 fs-5"><%= blog.title %></p></div>
+                                                    <div class="mb-2 blog-img d-flex align-items-center justify-content-center">
+                                                        <div class="border border-2 p-4 rounded-2">
+                                                            <img src="<%= blog.blogImag && blog.blogImag ? blog.blogImag : 'https://www.gynprog.com.br/wp-content/uploads/2017/06/wood-blog-placeholder.jpg' %>" class="profile-picture img-fluid" alt="Profile Picture" style="object-fit: cover;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="description"><%- blog.Blogdescription %></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            <% }); %>
-                        </div>
+                                <% }); %>
+                            </div>                            
                     </div>
                 </div>
             </div>
@@ -80,6 +85,6 @@
     </script>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </body>
 </html>

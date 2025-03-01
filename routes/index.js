@@ -4,6 +4,7 @@ const indexController = require("../controllers/indexController.js")
 const BlogControler = require("../controllers/BlogController.js")
 const AuthMiddleware = require("../middleware/indexmiddleware.js");
 const upload = require("../middleware/ProfileImgUpload.js");
+const BlogUpload = require("../middleware/BlogImgUpload.js")
 const user = require("../middleware/userGetmiddleware.js");
 
 
@@ -32,6 +33,6 @@ routes.post("/register", indexController.register);
 routes.post("/login", indexController.authLogin);
 routes.post("/profileEdit/:id", indexController.profileEdit)
 routes.post("/profileImg/:id", upload.single("profileImg"), indexController.profileImg);
-routes.post("/addBlog",BlogControler.postBlog)
+routes.post("/addBlog",BlogUpload.single("blogImg"),BlogControler.postBlog)
 
 module.exports= routes

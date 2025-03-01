@@ -1,5 +1,6 @@
-const AdminModel = require("../models/panelSchema.js")
-const BlogModel = require("../models/blogModel.js")
+const AdminModel = require("../models/panelSchema.js");
+const BlogModel = require("../models/blogModel.js");
+const BlogMulter = require("../middleware/BlogImgUpload.js")
 
 const addBlog = (req, res) => {
     res.render("pages/addBlog");
@@ -12,6 +13,7 @@ const postBlog = async (req, res) => {
             title,
             Blogdescription,
             authorId: req.cookies.uid,
+            blogImag : req.file.path
         });
 
         await NewBlog.save();
