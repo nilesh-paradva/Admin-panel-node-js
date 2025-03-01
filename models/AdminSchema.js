@@ -17,7 +17,7 @@ const AdminSchema = new mongoose.Schema({
     avatar :{type: String, default: null},
     bio : {type : String, default :null},
     timezone:{type : String, default : null},
-    status:{type: String, default : null},
+    status:{type: String, default : "Active"},
     membership_level:{type : String, default : null}
 
 },{timestamps:true});
