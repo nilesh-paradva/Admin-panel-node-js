@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 const port = 3002;
 const path = require("path");
-const routes = require("./routes/index.js");
+const SimpleHomeRoute = require("./routes/HomePageRoute.js");
+const AuthRoutes = require("./routes/AuthRoute.js");
+const ProfileRoute = require("./routes/ProfileRoute");
+const BlogRoute = require("./routes/BlogRoute.js")
 const cookie = require("cookie-parser")
 const db = require("./db/db.js")
 
@@ -14,7 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/profileimg', express.static(path.join(__dirname, 'profileimg')));
 
 app.use(cookie());
-app.use("/", routes);
+app.use("/", AuthRoutes, SimpleHomeRoute, ProfileRoute, BlogRoute);
+
 
 app.listen(port, (err) => {
     !err && console.log("server is start", `http://localhost:${port}`);

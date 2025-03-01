@@ -563,7 +563,7 @@
 										</div>
 										<div class="card-body  text-center">
 											<div class="profile-picture-container" style="position: relative; display: inline-block;">
-												<img src="<%= user && user.path ? user.path : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>" class="profile-picture" alt="Profile Picture" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover;">
+												<img src="<%= user && user.avatar ? user.avatar : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>" class="profile-picture" alt="Profile Picture" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover;">
 												<span class="<%= user.status == 'Active' ? 'bg-success' : 'bg-danger' %> p-2  rounded-pill position-absolute z-5 border border-2" style="bottom: 0.6rem; right: 1.1rem;"></span>
 											</div>
 											<h6 class="f-w-600 m-t-25 m-b-10"><%= user && user.username ? user.username : "Nilesh" %></h6>

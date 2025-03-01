@@ -26,7 +26,7 @@
                                             <div class="card-box-body px-3 py-3 flex-grow-1 d-flex flex-column">
                                                 <div class="mb-3 blog-profile-img-dis d-flex align-items-center justify-content-between">
                                                     <div class="profile-picture-container d-flex align-items-center">
-                                                        <img src="<%= blog.admin && blog.admin.path ? blog.admin.path : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>" class="profile-picture" alt="Profile Picture" style="width: 70px; aspect-ratio: 1/1; border-radius: 50%; object-fit: cover;">
+                                                        <img src="<%= blog.admin && blog.admin.avatar ? blog.admin.avatar : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>" class="profile-picture" alt="Profile Picture" style="width: 70px; aspect-ratio: 1/1; border-radius: 50%; object-fit: cover;">
                                                         <div class="ps-2">
                                                             <h4 class="card-title text-primary m-0 text-black"><%= blog.admin.username %></h4>
                                                             <p class="m-0"><%= new Date(blog.createdAt).toLocaleString('en-US', {

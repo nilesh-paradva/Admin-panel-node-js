@@ -1,10 +1,8 @@
-const AdminModel = require("../models/panelSchema.js");
+const AdminModel = require("../models/AdminSchema.js");
 const BlogModel = require("../models/blogModel.js");
 const BlogMulter = require("../middleware/BlogImgUpload.js")
 
-const addBlog = (req, res) => {
-    res.render("pages/addBlog");
-}
+const addBlog = (req, res) => {res.render("pages/addBlog")}
 
 const postBlog = async (req, res) => {
     try {
@@ -19,8 +17,7 @@ const postBlog = async (req, res) => {
         await NewBlog.save();
         res.redirect("/ViewBlog");
     } catch (error) {
-        console.error("Error posting blog:", error);
-        res.status(500).json({ message: "Server Error", error });
+        console.error("Error post blog:", error);
     }
 };
 
