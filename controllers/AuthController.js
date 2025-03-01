@@ -10,7 +10,7 @@ const authLogin = async (req, res) => {
         if (!admin) return res.status(401).json({ message: "Invalid email or password." });
         bcrypt.compare(req.body.password, admin.password, async (err, pass) => {
             if (!err && pass) {
-                res.cookie("uid", admin._id, { maxAge: 1000*60*60*24, httpOnly: true, expires: true });
+                res.cookie("uid", admin._id, { maxAge: 1000*60, httpOnly: true, expires: true });
                 res.redirect("/");
             } else {
                 console.log("log err");
