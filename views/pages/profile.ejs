@@ -190,28 +190,31 @@
 												  <div class="col-md-6">
 													<div class="card h-100 shadow border border-2 border-secondary-subtle rounded-2 p-3">
 													  <div class="d-flex align-items-center justify-content-between mb-3">
-														<div class="d-flex align-items-center">
-														  <img src="<%= user && user.avatar ? user.avatar : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>" 
-															class="rounded-circle" width="50" height="50" style="object-fit: cover;">
-														  <div class="ms-2">
-															<h5 class="m-0 text-primary"><%= user.username %></h5>
-															<p class="text-muted small m-0"><%= new Date(blog.createdAt).toLocaleString('en-US', {
-															  weekday: 'long', year: 'numeric', month: 'long',
-															  day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true,
-															}) %></p>
+														<div class="d-flex align-items-center justify-content-between flex-column flex-lg-row w-100">
+														<div class="ms-2 text-center text-lg-start d-flex align-items-center flex-column flex-lg-row">
+															<img src="<%= user && user.avatar ? user.avatar : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s' %>" class="rounded-circle" width="50" height="50" style="object-fit: cover;">
+															<div class="dis ps-2">
+																<h5 class="m-0 text-primary"><%= user.username %></h5>
+																<p class="text-muted small m-0"><%= new Date(blog.createdAt).toLocaleString('en-US', {
+																  weekday: 'long', year: 'numeric', month: 'long',
+																  day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true,
+																}) %></p>
+															</div>
 														  </div>
+														  <span class="card-title text-primary ps-2 time-ago" data-time="<%= blog.createdAt %>">
+															  <%= new Date(blog.createdAt).toLocaleString('en-US') %>
+														  </span>
 														</div>
-														<span class="card-title text-primary ps-2 time-ago" data-time="<%= blog.createdAt %>">
-															<%= new Date(blog.createdAt).toLocaleString('en-US') %>
-														</span>
 													  </div>
 													  <div>
-														<h6 class="fw-bold mb-2"><%= blog.title %></h6>
+														<h6 class="fw-bold mb-2 text-center text-lg-start"><%= blog.title %></h6>
 														<div class="text-center mb-3">
 														  <img src="<%= blog.blogImag ? blog.blogImag : 'https://www.gynprog.com.br/wp-content/uploads/2017/06/wood-blog-placeholder.jpg' %>" 
 															class="img-fluid rounded border border-2 p-1" alt="Blog Image" style="object-fit: cover;">
 														</div>
-														<p class="text-muted"><%- blog.Blogdescription %></p>
+														<div class="dis text-center text-lg-start">
+															<%- blog.Blogdescription %>
+														</div>
 													  </div>
 													</div>
 												  </div>
