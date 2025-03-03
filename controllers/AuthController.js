@@ -1,30 +1,10 @@
 const AdminModel = require("../models/AdminSchema");
 const bcrypt = require("bcrypt");
 
-const authsignin = (req, res) => ((req.cookies.uid) ? res.redirect("/") : res.render("pages/authsignin"));
-
-const authLogin = async (req, res) => {
-    try {
-        if (!req.body.email || !req.body.password) return res.status(400).json({ message: "Email and password are required." });
-        const admin = await AdminModel.findOne({ email: req.body.email });
-        if (!admin) return res.status(401).json({ message: "Invalid email or password." });
-        bcrypt.compare(req.body.password, admin.password, async (err, pass) => {
-            if (!err && pass) {
-                res.cookie("uid", admin._id, { maxAge: 1000*60*60, httpOnly: true, expires: true });
-                res.redirect("/");
-            } else {
-                console.log("log err");
-            }
-        })
-
-    } catch (err) {
-        console.error("Error signing in:", err);
-        res.status(500).json({ message: "Internal server error." });
-    }
-};
-
+const authsignin = (req, res) => (res.render("pages/authsignin"));
+const authLogin = async (req, res) => {res.redirect("/")};
 const SignOut = (req, res) => (res.clearCookie("uid"), res.redirect("/authsignin"));
-const authsignup = (req, res) => ((req.cookies.uid) ? res.redirect("/") : res.render("pages/authsignup"))
+const authsignup = (req, res) => (res.render("pages/authsignup"))
 
 const register = async (req, res) => {
     try {
